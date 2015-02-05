@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The Watering Hole</string>
+    <string name="hi_there">Hi there!</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">Register</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Registration">Registration</string>
+    <string name="Username:">Username</string>
+    <string name="New_Password:">NewPassword</string>
+    <string name="Repeat_Password:">RepeatPassword</string>
+    <string name="Email:">Email</string>
+    <string name="title_activity_events">EventsActivity</string>
+    <string name="title_activity_locate_events">LocateEvents</string>
+    <string name="NearbyEvents">NearbyEvents</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_hangouts">Hangouts</string>
+    <string name="Hangouts">Hangouts</string>
+    <string name="HangoutsNearby">Hangouts Nearby</string>
+    <string name="StartHangout">Start Hangout</string>
+</resources>
