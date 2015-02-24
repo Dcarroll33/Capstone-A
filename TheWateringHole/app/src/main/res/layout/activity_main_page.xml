@@ -1,0 +1,69 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.hw1.devlyn.thewateringhole.MainPageActivity"
+    android:background="#ffbd32ff">
+
+    <TextView android:text="@string/main_menu_title" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Events"
+        android:id="@+id/Events"
+        android:background="#ffc1a875"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_friends"
+        android:id="@+id/Friends"
+        android:background="#ffc1a875"
+        android:layout_below="@+id/Events"
+        android:layout_alignLeft="@+id/Events"
+        android:layout_alignStart="@+id/Events"
+        android:layout_marginTop="52dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Profile"
+        android:id="@+id/Profile"
+        android:background="#ffc1a875"
+        android:layout_marginTop="117dp"
+        android:layout_below="@+id/Friends"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Settings"
+        android:id="@+id/Settings"
+        android:background="#ffc1a875"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/Profile"
+        android:layout_alignStart="@+id/Profile"
+        android:layout_marginBottom="45dp" />
+
+
+</RelativeLayout>

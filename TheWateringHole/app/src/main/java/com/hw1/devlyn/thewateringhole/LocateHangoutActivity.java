@@ -10,28 +10,30 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class EventsActivity extends Activity implements View.OnClickListener {
+public class LocateHangoutActivity extends Activity implements View.OnClickListener {
 
-    Button locate;
+    Button joinHangout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_locate_hangout);
 
-        locate = (Button) this.findViewById(R.id.locate_events);
+        joinHangout = (Button) this.findViewById(R.id.Join_Hangout);
 
-        locate.setOnClickListener(this);
+        joinHangout.setOnClickListener(this);
     }
 
     public void onClick(View v) {
-
-        if (v == locate) {
-            Intent locateEvents = new Intent(this, LocateEvents.class);
+        if (v == joinHangout) {
+            Intent joinHangout = new Intent(this, HangoutPageActivity.class);
 
             Button b = (Button) v;
-            this.startActivity(locateEvents);
+            this.startActivity(joinHangout);
 
         }
     }
+
+
+
 }

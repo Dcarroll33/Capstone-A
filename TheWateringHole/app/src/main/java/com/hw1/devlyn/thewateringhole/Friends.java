@@ -10,24 +10,25 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class EventsActivity extends Activity implements View.OnClickListener {
+public class Friends extends Activity implements View.OnClickListener {
 
-    Button locate;
+    Button locateFriends;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_friends);
 
-        locate = (Button) this.findViewById(R.id.locate_events);
 
-        locate.setOnClickListener(this);
-    }
+    locateFriends = (Button) this.findViewById(R.id.Locate_Friends);
+
+    locateFriends.setOnClickListener(this);
+}
 
     public void onClick(View v) {
 
-        if (v == locate) {
-            Intent locateEvents = new Intent(this, LocateEvents.class);
+        if (v == locateFriends) {
+            Intent locateEvents = new Intent(this, Locate_Friends.class);
 
             Button b = (Button) v;
             this.startActivity(locateEvents);

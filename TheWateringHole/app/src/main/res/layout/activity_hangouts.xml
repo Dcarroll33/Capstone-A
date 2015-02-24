@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hw1.devlyn.thewateringhole.Hangouts">
+    tools:context="com.hw1.devlyn.thewateringhole.Hangouts"
+    android:background="#ffbd32ff">
 
     <TextView android:text="@string/Hangouts" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,14 +21,16 @@
         android:id="@+id/HangoutsNearby"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp" />
+        android:layout_marginTop="79dp"
+        android:background="#ffc1a875" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/StartHangout"
+        android:text="@string/Create_Hangout"
         android:id="@+id/Start_Hangout"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#ffc1a875" />
 
 </RelativeLayout>
