@@ -149,7 +149,6 @@ public class MainActivity extends ActionBarActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.list_slider_menu).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 
