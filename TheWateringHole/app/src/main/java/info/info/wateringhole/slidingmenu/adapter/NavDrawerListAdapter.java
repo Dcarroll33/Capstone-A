@@ -1,4 +1,4 @@
-package info.wateringhol.slindingmenu.adapter;
+package info.info.wateringhole.slidingmenu.adapter;
 
 /**
  * Created by Devlyn on 2/23/2015.
@@ -16,8 +16,7 @@ import com.hw1.devlyn.thewateringhole.R;
 
 import java.util.ArrayList;
 
-import info.wateringhol.slindingmenu.adapter.NavDrawerListAdapter;
-import info.wateringhole.slidingmenu.model.NavDrawerItem.NavDrawerItem.NavDrawerItem;
+import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 public class NavDrawerListAdapter extends BaseAdapter {
 
@@ -25,7 +24,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
     private ArrayList<NavDrawerItem> navDrawerItems;
 
     public NavDrawerListAdapter(Context applicationContext, ArrayList<NavDrawerItem> navDrawerItems){
-        this.context = context;
+        this.context = applicationContext;
         this.navDrawerItems = navDrawerItems;
     }
 
@@ -48,9 +47,9 @@ public class NavDrawerListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater)
-                    context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.drawer_list_item, null);
+            LayoutInflater Inflater = (LayoutInflater)
+                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = Inflater.inflate(R.layout.drawer_list_item, parent,false);
         }
 
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);

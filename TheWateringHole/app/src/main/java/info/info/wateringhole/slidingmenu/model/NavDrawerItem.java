@@ -1,4 +1,4 @@
-package info.wateringhole.slidingmenu.model.NavDrawerItem.NavDrawerItem;
+package info.info.wateringhole.slidingmenu.model;
 
 /**
  * Created by Devlyn on 2/23/2015.
