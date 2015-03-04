@@ -72,10 +72,6 @@
         android:layout_height="match_parent">
 
         <!-- Framelayout to display Fragments -->
-        <FrameLayout
-            android:id="@+id/frame_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
         <!-- Listview to display slider menu -->
         <ListView
@@ -89,5 +85,13 @@
             android:listSelector="@drawable/list_selector"
             android:background="@color/list_background"/>
     </android.support.v4.widget.DrawerLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

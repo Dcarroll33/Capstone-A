@@ -71,7 +71,7 @@
 <string name="account_info_title">Account Info</string>
 <string name="hangout_page_title">Hangout Page</string>
 <string name="title_activity_slide_out_menu">SlideOutMenuActivity</string>
-<string name="main_menu_title">Main Menu</string>
+<string name="main_menu_title">The Watering Hole</string>
 
 <!--Slide out menu string values-->
 
@@ -85,10 +85,11 @@
     <string-array name="nav_drawer_items">
         <item >Home</item>
         <item >Find People</item>
-        <item >Photos</item>
-        <item >Communities</item>
-        <item >Pages</item>
-        <item >What\'s Hot</item>
+        <item >Find Events</item>
+        <item >Find Hangouts</item>
+        <item >Edit Profile</item>
+        <item >Settings</item>
+
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
