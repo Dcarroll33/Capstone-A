@@ -11,18 +11,27 @@
         android:layout_height="wrap_content"
         android:textSize="35dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView11" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finish"
-        android:id="@+id/finish"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/angry_btn"
+
+        android:text="Finish"
+        android:textColor="#FEFFFA"
+        android:textSize="30sp"
+
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_button"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_below="@+id/Date"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="66dp"
-        android:background="#ffc1a875" />
+        android:layout_marginTop="45dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,8 +57,7 @@
         android:layout_height="wrap_content"
         android:text="@string/View_permissions"
         android:id="@+id/View_Permissions"
-        android:layout_alignBaseline="@+id/finish"
-        android:layout_alignBottom="@+id/finish"
+        android:layout_below="@+id/num_allowed"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

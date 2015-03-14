@@ -3,6 +3,7 @@ package com.hw1.devlyn.thewateringhole;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 import static com.hw1.devlyn.thewateringhole.R.*;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -43,10 +44,26 @@ public class MainActivity extends ActionBarActivity {
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
+    Button Events;
+    Button Friends;
+    Button Profile;
+    Button Settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
+
+        Events = (Button) this.findViewById(id.events_btn);
+        Friends = (Button) this.findViewById(id.friends_btn);
+        Profile = (Button) this.findViewById(id.profile_btn);
+        Settings = (Button) this.findViewById(id.settings_btn);
+
+        Events.setOnClickListener(this);
+        Friends.setOnClickListener(this);
+        Profile.setOnClickListener(this);
+        Settings.setOnClickListener(this);
+
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -83,7 +100,6 @@ public class MainActivity extends ActionBarActivity {
 
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
-
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(),
                 navDrawerItems);
@@ -119,6 +135,27 @@ public class MainActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             displayView(0);
+        }
+    }
+
+    public void onClick(View v) {
+        if (v == Events) {
+            Intent events = new Intent(this, EventsActivity.class);
+
+            Button b = (Button) v;
+            this.startActivity(events);
+        }
+        else if (v == Friends) {
+            Intent friends = new Intent(this, Friends.class);
+
+            Button b = (Button) v;
+            this.startActivity(friends);
+        }
+        else if (v == Settings) {
+            Intent settings = new Intent(this, Settings.class);
+
+            Button b = (Button) v;
+            this.startActivity(settings);
         }
     }
 
@@ -224,4 +261,5 @@ public class MainActivity extends ActionBarActivity {
             Log.e("MainActivity", "Error in creating fragment");
         }*/
     }
+
 }

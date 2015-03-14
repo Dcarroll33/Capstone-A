@@ -19,8 +19,8 @@ public class Login_Screen extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__screen);
 
-        login = (Button) this.findViewById(R.id.login);
-        register = (Button) this.findViewById(R.id.register);
+        login = (Button) this.findViewById(R.id.login_button);
+        register = (Button) this.findViewById(R.id.register_button);
 
         login.setOnClickListener(this);
         register.setOnClickListener(this);
