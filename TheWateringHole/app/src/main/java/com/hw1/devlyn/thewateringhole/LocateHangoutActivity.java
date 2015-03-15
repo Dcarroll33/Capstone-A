@@ -48,7 +48,7 @@ public class LocateHangoutActivity extends ActionBarActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locate_hangout);
 
-        joinHangout = (Button) this.findViewById(R.id.Join_Hangout);
+        joinHangout = (Button) this.findViewById(R.id.Join_btn);
 
         joinHangout.setOnClickListener(this);
 

@@ -1,17 +1,34 @@
 package com.hw1.devlyn.thewateringhole;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class Locate_Friends extends ActionBarActivity {
+public class Locate_Friends extends ActionBarActivity implements View.OnClickListener {
+
+    Button FriendsProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locate__friends);
+
+        FriendsProfile = (Button) this.findViewById(R.id.friends_profile_btn);
+        FriendsProfile.setOnClickListener(this);
+    }
+
+    public void onClick(View v) {
+        if (v == FriendsProfile) {
+            Intent events = new Intent(this, UserProfile.class);
+
+            Button b = (Button) v;
+            this.startActivity(events);
+        }
     }
 
 

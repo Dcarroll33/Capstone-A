@@ -21,8 +21,8 @@ public class Hangouts extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangouts);
 
-        startHangout = (Button) this.findViewById(R.id.Start_Hangout);
-        hangoutsNearby = (Button) this.findViewById(R.id.HangoutsNearby);
+        startHangout = (Button) this.findViewById(R.id.hangouts_nrby_btn);
+        hangoutsNearby = (Button) this.findViewById(R.id.start_btn);
 
         startHangout.setOnClickListener(this);
         hangoutsNearby.setOnClickListener(this);

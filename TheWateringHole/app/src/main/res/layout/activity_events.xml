@@ -16,7 +16,7 @@
         android:phoneNumber="true" />
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/events_btn"
 
         android:text="Locate Events"
         android:textColor="#FEFFFA"

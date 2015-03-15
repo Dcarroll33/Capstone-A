@@ -20,7 +20,7 @@ public class Friends extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_friends);
 
 
-    locateFriends = (Button) this.findViewById(R.id.Locate_Friends);
+    locateFriends = (Button) this.findViewById(R.id.locate_friends_btn);
 
     locateFriends.setOnClickListener(this);
 }

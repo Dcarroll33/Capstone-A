@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/locate_friends_btn"
 
         android:text="Locate Friends"
         android:textColor="#FEFFFA"

@@ -19,7 +19,7 @@ public class HangoutSetupActivity extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangout_setup);
 
-        Finish = (Button) this.findViewById(R.id.finish);
+        Finish = (Button) this.findViewById(R.id.finish_btn);
 
         Finish.setOnClickListener(this);
     }

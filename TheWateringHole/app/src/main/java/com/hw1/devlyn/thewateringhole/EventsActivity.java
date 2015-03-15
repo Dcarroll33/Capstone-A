@@ -19,7 +19,7 @@ public class EventsActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        locate = (Button) this.findViewById(R.id.locate_events);
+        locate = (Button) this.findViewById(R.id.events_btn);
 
         locate.setOnClickListener(this);
     }

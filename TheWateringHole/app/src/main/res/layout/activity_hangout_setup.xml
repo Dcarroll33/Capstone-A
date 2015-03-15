@@ -15,7 +15,7 @@
         android:id="@+id/textView11" />
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/finish_btn"
 
         android:text="Finish"
         android:textColor="#FEFFFA"

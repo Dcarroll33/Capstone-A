@@ -151,6 +151,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Button b = (Button) v;
             this.startActivity(friends);
         }
+        else if (v == Profile) {
+            Intent profile = new Intent(this, UserProfile.class);
+
+            Button b = (Button) v;
+            this.startActivity(profile);
+        }
         else if (v == Settings) {
             Intent settings = new Intent(this, Settings.class);
 
