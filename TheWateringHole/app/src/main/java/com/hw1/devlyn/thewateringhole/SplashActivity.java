@@ -13,7 +13,7 @@ public class SplashActivity extends Activity {
 
     Handler handler;
 
-    static final int DELAY = 5000;
+    static final int DELAY = 10000;
 
     Class nextActivity = MainActivity.class;
 

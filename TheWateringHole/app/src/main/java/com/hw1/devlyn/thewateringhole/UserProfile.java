@@ -1,7 +1,9 @@
 package com.hw1.devlyn.thewateringhole;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.provider.ContactsContract;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class UserProfile extends ActionBarActivity {
+public class UserProfile extends ActionBarActivity implements View.OnClickListener {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -38,10 +41,17 @@ public class UserProfile extends ActionBarActivity {
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
+    Button Profile;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        Profile = (Button) this.findViewById(R.id.profile_btn);
+
+        Profile.setOnClickListener(this);
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -113,6 +123,15 @@ public class UserProfile extends ActionBarActivity {
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             displayView(0);
+        }
+    }
+    @Override
+    public void onClick(View v) {
+        if (v == Profile) {
+            Intent events = new Intent(this, UserProfile.class);
+
+            Button b = (Button) v;
+            this.startActivity(events);
         }
     }
 
