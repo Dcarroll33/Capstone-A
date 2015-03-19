@@ -7,9 +7,5 @@
     tools:context="com.hw1.devlyn.thewateringhole.SplashActivity"
     android:background="@drawable/watering_hole">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-
 
 </RelativeLayout>

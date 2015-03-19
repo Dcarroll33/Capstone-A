@@ -8,11 +8,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-    <ImageView
+    <!--<ImageView
             android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/watering_hole"
-        android:layout_gravity="center" />
+        android:layout_gravity="center" />-->
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".Login_Screen"
@@ -51,10 +60,7 @@
             android:name=".Locate_Friends"
             android:label="@string/Locate__Friends" >
         </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:label="@string/title_activity_splash" >
-        </activity>
+
         <activity
             android:name=".HangoutSetupActivity"
             android:label="@string/hangout_setup_title" >
