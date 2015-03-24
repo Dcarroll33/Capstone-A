@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
+import static com.hw1.devlyn.thewateringhole.R.menu.menu_slide_out_menu;
+
 
 public class Settings extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
@@ -118,7 +120,7 @@ public class Settings extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_settings, menu);
+        getMenuInflater().inflate(R.menu.menu_slide_out_menu, menu);
         return true;
     }
 
