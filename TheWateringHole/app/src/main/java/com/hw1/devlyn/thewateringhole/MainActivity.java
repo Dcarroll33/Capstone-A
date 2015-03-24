@@ -27,6 +27,11 @@ import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 import static com.hw1.devlyn.thewateringhole.R.*;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+    Button Events;
+    Button Friends;
+    Button Profile;
+    Button Settings;
+
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -43,11 +48,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
-
-    Button Events;
-    Button Friends;
-    Button Profile;
-    Button Settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
