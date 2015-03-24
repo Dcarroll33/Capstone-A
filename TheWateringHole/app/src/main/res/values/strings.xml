@@ -45,8 +45,8 @@
 <string name="Registration">Registration</string>
 <string name="Username">Username:</string>
 <string name="Password">Password:</string>
-<string name="new_password:">New Password</string>
-<string name="repeat_password:">Repeat Password</string>
+<string name="new_password">New Password</string>
+<string name="repeat_password">Repeat Password</string>
 <string name="Email">Email:</string>
 <string name="Age">Age:</string>
 <string name="Events">Events</string>

@@ -22,7 +22,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class UserProfile extends ActionBarActivity implements View.OnClickListener {
+public class UserProfile extends ActionBarActivity {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -41,7 +41,7 @@ public class UserProfile extends ActionBarActivity implements View.OnClickListen
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
-    Button Profile;
+    /*Button Profile;*/
 
 
     @Override
@@ -49,9 +49,9 @@ public class UserProfile extends ActionBarActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        Profile = (Button) this.findViewById(R.id.profile_btn);
+        /*Profile = (Button) this.findViewById(R.id.profile_btn);
 
-        Profile.setOnClickListener(this);
+        Profile.setOnClickListener(this); */
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -123,15 +123,6 @@ public class UserProfile extends ActionBarActivity implements View.OnClickListen
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             displayView(0);
-        }
-    }
-    @Override
-    public void onClick(View v) {
-        if (v == Profile) {
-            Intent events = new Intent(this, UserProfile.class);
-
-            Button b = (Button) v;
-            this.startActivity(events);
         }
     }
 

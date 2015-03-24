@@ -49,9 +49,9 @@ public class Friends extends ActionBarActivity implements View.OnClickListener {
         setContentView(R.layout.activity_friends);
 
 
-    locateFriends = (Button) this.findViewById(R.id.locate_friends_btn);
+        locateFriends = (Button) this.findViewById(R.id.locate_friends_btn);
 
-    locateFriends.setOnClickListener(this);
+        locateFriends.setOnClickListener(this);
 
         mTitle = mDrawerTitle = getTitle();
 

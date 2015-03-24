@@ -15,7 +15,7 @@ public class SplashActivity extends Activity {
 
     static final int DELAY = 5000;
 
-    Class nextActivity = MainActivity.class;
+    Class nextActivity = Login_Screen.class;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
