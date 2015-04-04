@@ -62,6 +62,7 @@
 <string name="Locate__Friends">Locate Friends</string>
 <string name="title_activity_splash">Splash Screen</string>
 <string name="Confirm">Confirm</string>
+<string name="Friends">Friends</string>
 
 <!--Activity Screen Titles-->
 <string name="hangout_setup_title">Hangout Setup</string>

@@ -27,22 +27,24 @@ import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 import static com.hw1.devlyn.thewateringhole.R.*;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+    /*Fields for the buttons to be used in this class.*/
     Button Events;
     Button Friends;
     Button Profile;
     Button Settings;
 
+    /*These fields are used for the navigation slide out menu.*/
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
 
-    // nav drawer title
+    /*Navigation drawer title*/
     private CharSequence mDrawerTitle;
 
-    // used to store app title
+    /*Stores app title for menu*/
     private CharSequence mTitle;
 
-    // slide menu items
+    /*Slide menu items*/
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
 
@@ -109,14 +111,16 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        // enabling action bar app icon and behaving it as toggle button
+        /* This enables the action bar app icon and allows it to behave as a toggle button on the
+            screen.*/
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, //nav menu toggle icon
                 string.app_name, // nav drawer open - description for accessibility
                 string.app_name) // nav drawer close - description for accessibility
 
         {
-
+            /*These methods are used for when the menu slides out or in and what to display on the
+                screen.*/
             public void onDrawerClosed(View view) {
                 getSupportActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
@@ -138,6 +142,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
     }
 
+    /*This method is for the on screen clicks by the user depending on which button is pushed
+        in this case the Events, Friends, Profile or Settings buttons. Once one button has been
+        clicked depedning on their relationship the screen will switch to the appropriate screen.*/
     public void onClick(View v) {
         if (v == Events) {
             Intent events = new Intent(this, EventsActivity.class);

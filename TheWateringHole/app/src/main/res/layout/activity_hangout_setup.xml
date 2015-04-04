@@ -31,7 +31,9 @@
         android:layout_below="@+id/Date"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:layout_toRightOf="@+id/num_allowed"
+        android:layout_toEndOf="@+id/num_allowed" />
 
     <EditText
         android:layout_width="wrap_content"

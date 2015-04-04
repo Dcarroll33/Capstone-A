@@ -13,8 +13,10 @@ public class SplashActivity extends Activity {
 
     Handler handler;
 
+    /*Assigns five second splash screen display time to the splash screen.*/
     static final int DELAY = 5000;
 
+    /*Assigns the nextActivity as the login screen*/
     Class nextActivity = Login_Screen.class;
 
     @Override
@@ -35,6 +37,7 @@ public class SplashActivity extends Activity {
       }
     };
 
+    /*Method to fire the next activity after the splash screen displays.*/
     public void gotoNextScreen() {
         Intent nextScreen = new Intent(this, nextActivity);
         this.startActivity(nextScreen);
