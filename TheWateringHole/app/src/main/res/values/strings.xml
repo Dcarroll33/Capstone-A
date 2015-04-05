@@ -9,7 +9,7 @@
 <string name="register">Register</string>
 
 
-<!--Locate buttons-->
+<!--These are the string names used for locating!-->
 <string name="locate_events">Locate Events</string>
 <string name="locate_friends">Locate Friends</string>
 <string name="finish">Finish</string>
@@ -19,7 +19,7 @@
 <string name="Profile">Profile</string>
 <string name="Settings">Settings</string>
 
-<!--Input fields-->
+<!--Input field string names for the activity screens-->
 <string name="Profile_Picture">Profile Picture:</string>
 <string name="Theme">Theme</string>
 <string name="Description">Description:</string>
@@ -32,7 +32,7 @@
 <string name="Time">Time:</string>
 <string name="Date">Date:</string>
 
-<!--Text fields-->
+<!--Text field string names used throughout the activity screens-->
 <string name="num_online">#Online:</string>
 <string name="num_available">#Available</string>
 <string name="num_busy">#Busy</string>
@@ -41,6 +41,8 @@
 <string name="About">About</string>
 <string name="Version">Version 1.0</string>
 
+
+<!--These are the reference strings for buttons used throughout the program!-->
 <string name="title_activity_register">Register</string>
 <string name="Registration">Registration</string>
 <string name="Username">Username:</string>
@@ -95,7 +97,7 @@
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->
-    <!-- Keep them in order as the titles are in -->
+    <!-- Item names in order as the titles are in for the navigational menu-->
     <array name="nav_drawer_icons">
         <item>@drawable/cherry_blossum</item>
         <item>@drawable/cherry_blossum</item>

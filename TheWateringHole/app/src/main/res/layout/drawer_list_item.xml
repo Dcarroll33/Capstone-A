@@ -4,6 +4,7 @@
         android:layout_height="48dp"
         android:background="@drawable/list_selector">
 
+        <!--This image view is used for the toggle navigation button used on each activity screen!-->
         <ImageView
             android:id="@+id/icon"
             android:layout_width="25dp"

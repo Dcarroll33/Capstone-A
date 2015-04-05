@@ -20,8 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Framelayout to display Fragments -->
-
         <!-- Listview to display slider menu -->
         <ListView
             android:id="@+id/list_slider_menu"
@@ -35,6 +33,7 @@
             android:background="@color/list_background"/>
     </android.support.v4.widget.DrawerLayout>
 
+    <!-- Framelayout to display Fragments including the buttons for the activity screen! -->
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
