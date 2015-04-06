@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         mDrawerLayout = (DrawerLayout) findViewById(id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.list_slider_menu);
 
-        Log.d("Main Page","mDrawerList created"+ mDrawerList);
+        /*Log.d("Main Page","mDrawerList created"+ mDrawerList);*/
         navDrawerItems = new ArrayList<NavDrawerItem>();
 
         // adding nav drawer items to array
@@ -145,7 +145,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     /*This method is for the on screen clicks by the user depending on which button is pushed
         in this case the Events, Friends, Profile or Settings buttons. Once one button has been
         clicked depedning on their relationship the screen will switch to the appropriate screen.*/
+    @Override
     public void onClick(View v) {
+        Log.d("Made it OnClick","mDrawerList created"+ mDrawerList);
         if (v == Events) {
             Intent events = new Intent(this, EventsActivity.class);
 
@@ -233,7 +235,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 
     /**
-     * Slide menu item click listener
+     * Slide menu item click listener that implements an OnItemClickListener for the listview.
+     * Based off the position of the item in the navigation drawer the switch statement below fires
+     * intents to start a new activity pending each case.
      * */
     private class SlideMenuClickListener implements
             ListView.OnItemClickListener {
@@ -244,36 +248,50 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             displayView(position);
 
             switch (position) {
+                /*Case 0 used for the home item in the list and redirects the user to the main
+                 *activity page.
+                 */
                 case 0:
                     Intent home = new Intent(MainActivity.this, MainActivity.class);
 
                     startActivity(home);
                     break;
-
+                /*Case 1 used for the FindPeople item in the list and redirects the user to the
+                 *locate friends activity page.
+                 */
                 case 1:
                     Intent FindPeople = new Intent(MainActivity.this, Locate_Friends.class);
 
                     startActivity(FindPeople);
                     break;
-
+                /*Case 2 used for the FindEvents item in the list and redirects the user to the
+                 *locate event activity page.
+                 */
                 case 2:
                     Intent FindEvents = new Intent(MainActivity.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
-
+                /*Case 3 used for the FindHangouts item in the list and redirects the user to the
+                 *locate hangouts activity page.
+                 */
                 case 3:
                     Intent FindHangouts = new Intent(MainActivity.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
-
+                /*Case 4 used for the Edit Profile item in the list and redirects the user to the
+                 *profile activity page.
+                 */
                 case 4:
                     Intent EditProfile = new Intent(MainActivity.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
 
+                /*Case 5 used for the Settings item in the list and redirects the user to the
+                 *settings activity page.
+                 */
                 case 5:
                     Intent Settings = new Intent(MainActivity.this, Settings.class);
 
@@ -317,5 +335,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Log.e("MainActivity", "Error in creating fragment");
         }*/
     }
+
+
 
 }
