@@ -216,37 +216,49 @@ public class Hangouts extends ActionBarActivity implements View.OnClickListener 
             displayView(position);
 
             switch (position) {
+                 /*Case 0 used for the home item in the list and redirects the user to the main
+                *activity page.
+                */
                 case 0:
                     Intent home = new Intent(Hangouts.this, MainActivity.class);
 
-               /* Button b = (Button) v;*/
                     startActivity(home);
                     break;
-
+                /*Case 1 used for the FindPeople item in the list and redirects the user to the
+                 *locate friends activity page.
+                 */
                 case 1:
                     Intent FindPeople = new Intent(Hangouts.this, Locate_Friends.class);
 
                     startActivity(FindPeople);
                     break;
-
+                 /*Case 2 used for the FindEvents item in the list and redirects the user to the
+                *locate event activity page.
+                */
                 case 2:
                     Intent FindEvents = new Intent(Hangouts.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
-
+                /*Case 3 used for the FindHangouts item in the list and redirects the user to the
+                 *locate hangouts activity page.
+                 */
                 case 3:
                     Intent FindHangouts = new Intent(Hangouts.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
-
+                /*Case 4 used for the Edit Profile item in the list and redirects the user to the
+                *profile activity page.
+                */
                 case 4:
                     Intent EditProfile = new Intent(Hangouts.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
-
+                /*Case 5 used for the Settings item in the list and redirects the user to the
+                *settings activity page.
+                */
                 case 5:
                     Intent Settings = new Intent(Hangouts.this, Settings.class);
 
