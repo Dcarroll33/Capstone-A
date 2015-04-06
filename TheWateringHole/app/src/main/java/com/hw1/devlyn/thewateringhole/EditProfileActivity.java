@@ -188,6 +188,48 @@ public class EditProfileActivity extends ActionBarActivity {
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(EditProfileActivity.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(EditProfileActivity.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(EditProfileActivity.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(EditProfileActivity.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(EditProfileActivity.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(EditProfileActivity.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
     /**

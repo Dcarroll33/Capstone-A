@@ -1,5 +1,6 @@
 package com.hw1.devlyn.thewateringhole;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.support.v4.widget.DrawerLayout;
@@ -185,6 +186,48 @@ public class HangoutPageActivity extends ActionBarActivity {
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(HangoutPageActivity.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(HangoutPageActivity.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(HangoutPageActivity.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(HangoutPageActivity.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(HangoutPageActivity.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(HangoutPageActivity.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
     /**

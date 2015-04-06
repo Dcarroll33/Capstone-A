@@ -208,6 +208,48 @@ public class EventsActivity extends ActionBarActivity implements View.OnClickLis
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(EventsActivity.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(EventsActivity.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(EventsActivity.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(EventsActivity.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(EventsActivity.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(EventsActivity.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
     /**

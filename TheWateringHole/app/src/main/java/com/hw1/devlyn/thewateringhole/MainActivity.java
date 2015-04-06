@@ -242,6 +242,46 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(MainActivity.this, MainActivity.class);
+
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(MainActivity.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(MainActivity.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(MainActivity.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(MainActivity.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(MainActivity.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
     /**
@@ -249,17 +289,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
      * */
     private void displayView(int position) {
         // update the main content by replacing fragments
-       /* Fragment fragment = null;
-        switch (position) {
+       /* Fragment fragment = null;*/
+       /* switch (position) {
             case 0:
-                fragment = new HomeFragment();
+                Intent events = new Intent(this, MainActivity.class);
+
+               /* Button b = (Button) v;
+                this.startActivity(events);
                 break;
 
             default:
-                break;
+
         }
 
-        if (fragment != null) {
+        /*if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(id.frame_container, fragment).commit();

@@ -1,5 +1,6 @@
 package com.hw1.devlyn.thewateringhole;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.support.v4.widget.DrawerLayout;
@@ -187,6 +188,48 @@ public class Register extends ActionBarActivity {
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(Register.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(Register.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(Register.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(Register.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(Register.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                /*case 5:
+                    Intent Settings = new Intent(this, Settings.class);
+
+                    startActivity(Settings);
+                    break;*/
+                default:
+
+            }
         }
     }
     /**

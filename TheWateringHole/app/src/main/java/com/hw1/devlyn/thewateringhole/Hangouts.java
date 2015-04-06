@@ -214,6 +214,47 @@ public class Hangouts extends ActionBarActivity implements View.OnClickListener 
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(Hangouts.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(Hangouts.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(Hangouts.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(Hangouts.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(Hangouts.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(Hangouts.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
 

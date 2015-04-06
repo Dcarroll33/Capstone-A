@@ -94,6 +94,7 @@ public class LocateHangoutActivity extends ActionBarActivity implements View.OnC
 
         mDrawerList.setAdapter(adapter);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, //nav menu toggle icon
@@ -193,6 +194,48 @@ public class LocateHangoutActivity extends ActionBarActivity implements View.OnC
                                 long id) {
             // display view for selected nav drawer item
             displayView(position);
+
+
+            switch (position) {
+                case 0:
+                    Intent home = new Intent(LocateHangoutActivity.this, MainActivity.class);
+
+               /* Button b = (Button) v;*/
+                    startActivity(home);
+                    break;
+
+                case 1:
+                    Intent FindPeople = new Intent(LocateHangoutActivity.this, Locate_Friends.class);
+
+                    startActivity(FindPeople);
+                    break;
+
+                case 2:
+                    Intent FindEvents = new Intent(LocateHangoutActivity.this, LocateEvents.class);
+
+                    startActivity(FindEvents);
+                    break;
+
+                case 3:
+                    Intent FindHangouts = new Intent(LocateHangoutActivity.this, LocateHangoutActivity.class);
+
+                    startActivity(FindHangouts);
+                    break;
+
+                case 4:
+                    Intent EditProfile = new Intent(LocateHangoutActivity.this, EditProfileActivity.class);
+
+                    startActivity(EditProfile);
+                    break;
+
+                case 5:
+                    Intent Settings = new Intent(LocateHangoutActivity.this, Settings.class);
+
+                    startActivity(Settings);
+                    break;
+                default:
+
+            }
         }
     }
     /**
