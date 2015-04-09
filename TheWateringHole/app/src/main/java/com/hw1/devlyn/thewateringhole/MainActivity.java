@@ -26,7 +26,7 @@ import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 import static com.hw1.devlyn.thewateringhole.R.*;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity {
     /*Fields for the buttons to be used in this class.*/
     Button Events;
     Button Friends;
@@ -54,18 +54,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(layout.activity_main);
-
-        Events = (Button) this.findViewById(id.events_btn);
-        Friends = (Button) this.findViewById(id.friends_btn);
-        Profile = (Button) this.findViewById(id.profile_btn);
-        Settings = (Button) this.findViewById(id.settings_btn);
-
-        Events.setOnClickListener(this);
-        Friends.setOnClickListener(this);
-        Profile.setOnClickListener(this);
-        Settings.setOnClickListener(this);
-
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -140,39 +131,38 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             // on first time display view for first nav item
             displayView(0);
         }
+
+        //FragmentMainActivity fragment = (FragmentMainActivity) getFragmentManager().findFragmentById(id.main_fragment);
+
     }
 
     /*This method is for the on screen clicks by the user depending on which button is pushed
         in this case the Events, Friends, Profile or Settings buttons. Once one button has been
-        clicked depedning on their relationship the screen will switch to the appropriate screen.*/
-    @Override
-    public void onClick(View v) {
-        Log.d("Made it OnClick","mDrawerList created"+ mDrawerList);
+        clicked depending on their relationship the screen will switch to the appropriate screen.*/
+    /*public void onClick(View v) {
+        Log.d("Made it OnClick", "mDrawerList created" + mDrawerList);
         if (v == Events) {
             Intent events = new Intent(this, EventsActivity.class);
 
             Button b = (Button) v;
             this.startActivity(events);
-        }
-        else if (v == Friends) {
+        } else if (v == Friends) {
             Intent friends = new Intent(this, Friends.class);
 
             Button b = (Button) v;
             this.startActivity(friends);
-        }
-        else if (v == Profile) {
+        } else if (v == Profile) {
             Intent profile = new Intent(this, UserProfile.class);
 
             Button b = (Button) v;
             this.startActivity(profile);
-        }
-        else if (v == Settings) {
+        } else if (v == Settings) {
             Intent settings = new Intent(this, Settings.class);
 
             Button b = (Button) v;
             this.startActivity(settings);
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -195,7 +185,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
     }
 
-    /***
+    /**
      * Called when invalidateOptionsMenu() is triggered
      */
 
@@ -212,12 +202,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         mTitle = title;
         getSupportActionBar().setTitle(mTitle);
     }
-
-    /**
-     * When using the ActionBarDrawerToggle, you must call it during
-     * onPostCreate() and onConfigurationChanged()...
-     */
-
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -238,7 +222,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
      * Slide menu item click listener that implements an OnItemClickListener for the listview.
      * Based off the position of the item in the navigation drawer the switch statement below fires
      * intents to start a new activity pending each case.
-     * */
+     */
     private class SlideMenuClickListener implements
             ListView.OnItemClickListener {
         @Override
@@ -302,9 +286,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         }
     }
+
     /**
      * Diplaying fragment view for selected nav drawer list item
-     * */
+     */
     private void displayView(int position) {
         // update the main content by replacing fragments
        /* Fragment fragment = null;*/
@@ -335,7 +320,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Log.e("MainActivity", "Error in creating fragment");
         }*/
     }
-
 
 
 }

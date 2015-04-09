@@ -2,12 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hw1.devlyn.thewateringhole" >
 
+
+
     <application
+        android:name=".MyApplicationClass"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
+        <!--These are used for the GoogleApiClient the permissions grant access to the GoogleApiClient-->
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <!--<ImageView
             android:layout_width="wrap_content"
         android:layout_height="wrap_content"

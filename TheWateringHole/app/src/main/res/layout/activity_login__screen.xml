@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/login_button"
 
         android:text="Login"
