@@ -85,7 +85,7 @@ public class Login_Screen extends Activity implements GoogleApiClient.Connection
 
 
         }else if (view == register) {
-            Intent register = new Intent(this, Register.class);
+            Intent register = new Intent(this, RegisterActivity.class);
 
             Button r = (Button) view;
             this.startActivity(register);

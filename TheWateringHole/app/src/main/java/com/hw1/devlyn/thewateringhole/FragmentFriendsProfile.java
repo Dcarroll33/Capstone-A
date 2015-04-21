@@ -5,16 +5,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
-
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.plus.Plus;
 
 
 /**
@@ -25,7 +19,7 @@ import com.google.android.gms.plus.Plus;
  * Use the {@link FragmentMainActivity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentMainActivity extends Fragment implements  View.OnClickListener {
+public class FragmentFriendsProfile extends Fragment implements  View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -38,23 +32,18 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
     private boolean mIntentInProgress;
 
     /*Fields for the buttons to be used in this class.*/
-    Button Events;
-    Button Friends;
-    Button Profile;
-    Button Settings;
-    Button SignOut;
+    Button LocateFriends;
 
-    GoogleApiClient mGoogleApiClient = MyApplicationClass.getClient();
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentMainActivity.
+     * @return A new instance of fragment FragmentEvents.
      */
-    public static FragmentMainActivity newInstance(String param1, String param2) {
-        FragmentMainActivity fragment = new FragmentMainActivity();
+    public static FragmentFriendsProfile newInstance(String param1, String param2) {
+        FragmentFriendsProfile fragment = new FragmentFriendsProfile();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,7 +51,7 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
         return fragment;
     }
 
-    public FragmentMainActivity() {
+    public FragmentFriendsProfile() {
         // Required empty public constructor
     }
 
@@ -79,15 +68,11 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_main_activity, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_friends_profile, container, false);
 
         getButtons(rootView);
 
-        SignOut = (Button) rootView.findViewById(R.id.sign_out_button);
-        Events = (Button) rootView.findViewById(R.id.events_btn);
-        Friends = (Button) rootView.findViewById(R.id.friends_btn);
-        Profile = (Button) rootView.findViewById(R.id.profile_btn);
-        Settings = (Button) rootView.findViewById(R.id.settings_btn);
+        LocateFriends = (Button) rootView.findViewById(R.id.locate_friends_btn);
 
         return rootView;
     }
@@ -96,7 +81,7 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
         if(v instanceof ViewGroup) {
             ViewGroup vg = (ViewGroup) v;
 
-            for (int i = 0; i < vg.getChildCount(); i++) {
+            for (int i = 0; i <vg.getChildCount(); i++) {
                 View v1 = vg.getChildAt(i);
                 if (v1 instanceof Button) {
                     Button b = (Button) v1;
@@ -131,32 +116,11 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
         clicked depending on their relationship the screen will switch to the appropriate screen.*/
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.sign_out_button) {
-            mGoogleApiClient.disconnect();
-            Toast.makeText(super.getActivity().getBaseContext(), "Connected: "+ mGoogleApiClient.isConnected()+"", Toast.LENGTH_LONG).show();
-            Intent main = new Intent(getActivity(), MainActivity.class);
-            this.startActivity(main);
-        }
-        if (view == Events) {
-            Intent events = new Intent(getActivity(), EventsActivity.class);
+        if (view == LocateFriends) {
+            Intent events = new Intent(getActivity(), LocateFriendsActivity.class);
 
             Button b = (Button) view;
             this.startActivity(events);
-        } else if (view == Friends) {
-            Intent friends = new Intent(getActivity(), FriendsActivity.class);
-
-            Button b = (Button) view;
-            this.startActivity(friends);
-        } else if (view == Profile) {
-            Intent profile = new Intent(getActivity(), UserProfileActivity.class);
-
-            Button b = (Button) view;
-            this.startActivity(profile);
-        } else if (view == Settings) {
-            Intent settings = new Intent(getActivity(), SettingsActivity.class);
-
-            Button b = (Button) view;
-            this.startActivity(settings);
         }
     }
 

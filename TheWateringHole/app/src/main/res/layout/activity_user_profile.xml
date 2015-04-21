@@ -7,13 +7,6 @@
     tools:context="com.hw1.devlyn.thewateringhole.UserProfile"
     android:background="#ffbd32ff">
 
-    <TextView android:text="@string/user_profile_title" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView8" />
-
     <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/drawer_layout"
@@ -42,16 +35,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" >
 
-
-        <Button
+        <fragment
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save!"
-            android:id="@+id/save_btn"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:name="com.hw1.devlyn.thewateringhole.FragmentUserProfile"
+            android:id="@+id/fragment_main_activity"
+            android:layout_gravity="center" />
     </FrameLayout>
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class FriendsProfileActivity extends ActionBarActivity  {
+public class UserProfileActivity extends ActionBarActivity  {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -46,7 +46,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends_profile);
+        setContentView(R.layout.activity_user_profile);
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -192,7 +192,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                 *activity page.
                 */
                 case 0:
-                    Intent home = new Intent(FriendsProfileActivity.this, MainActivity.class);
+                    Intent home = new Intent(UserProfileActivity.this, MainActivity.class);
 
                     startActivity(home);
                     break;
@@ -200,7 +200,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(FriendsProfileActivity.this, LocateFriendsActivity.class);
+                    Intent FindPeople = new Intent(UserProfileActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;
@@ -208,7 +208,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                 *locate event activity page.
                 */
                 case 2:
-                    Intent FindEvents = new Intent(FriendsProfileActivity.this, LocateEvents.class);
+                    Intent FindEvents = new Intent(UserProfileActivity.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
@@ -216,7 +216,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                  *locate hangouts activity page.
                  */
                 case 3:
-                    Intent FindHangouts = new Intent(FriendsProfileActivity.this, LocateHangoutActivity.class);
+                    Intent FindHangouts = new Intent(UserProfileActivity.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
@@ -224,7 +224,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                 *profile activity page.
                 */
                 case 4:
-                    Intent EditProfile = new Intent(FriendsProfileActivity.this, EditProfileActivity.class);
+                    Intent EditProfile = new Intent(UserProfileActivity.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
@@ -232,7 +232,7 @@ public class FriendsProfileActivity extends ActionBarActivity  {
                  *settings activity page.
                  */
                 case 5:
-                    Intent Settings = new Intent(FriendsProfileActivity.this, SettingsActivity.class);
+                    Intent Settings = new Intent(UserProfileActivity.this, SettingsActivity.class);
 
                     startActivity(Settings);
                     break;
