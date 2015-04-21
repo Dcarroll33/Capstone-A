@@ -19,7 +19,7 @@ import android.widget.Button;
  * Use the {@link FragmentMainActivity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentEvents extends Fragment implements  View.OnClickListener {
+public class FragmentHangout extends Fragment implements  View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -51,7 +51,7 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
         return fragment;
     }
 
-    public FragmentEvents() {
+    public FragmentHangout() {
         // Required empty public constructor
     }
 
@@ -72,7 +72,7 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
 
         getButtons(rootView);
 
-        LocateFriends = (Button) rootView.findViewById(R.id.locate_events_btn);
+        LocateFriends = (Button) rootView.findViewById(R.id.locate_friends_btn);
 
         return rootView;
     }
@@ -140,4 +140,3 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     }
 
 }
-

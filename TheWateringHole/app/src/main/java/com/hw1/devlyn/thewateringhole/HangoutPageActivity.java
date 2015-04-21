@@ -195,7 +195,7 @@ public class HangoutPageActivity extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(HangoutPageActivity.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(HangoutPageActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

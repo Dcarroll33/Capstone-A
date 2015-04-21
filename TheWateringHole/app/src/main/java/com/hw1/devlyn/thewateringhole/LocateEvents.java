@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -197,7 +196,7 @@ public class LocateEvents extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(LocateEvents.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(LocateEvents.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

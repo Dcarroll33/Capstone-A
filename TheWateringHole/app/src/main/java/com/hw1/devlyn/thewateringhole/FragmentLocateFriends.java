@@ -19,7 +19,7 @@ import android.widget.Button;
  * Use the {@link FragmentMainActivity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentEvents extends Fragment implements  View.OnClickListener {
+public class FragmentLocateFriends extends Fragment implements  View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -32,7 +32,7 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     private boolean mIntentInProgress;
 
     /*Fields for the buttons to be used in this class.*/
-    Button LocateFriends;
+    Button FriendsProfile;
 
     /**
      * Use this factory method to create a new instance of
@@ -51,7 +51,7 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
         return fragment;
     }
 
-    public FragmentEvents() {
+    public FragmentLocateFriends() {
         // Required empty public constructor
     }
 
@@ -68,11 +68,11 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_locate_friends, container, false);
 
         getButtons(rootView);
 
-        LocateFriends = (Button) rootView.findViewById(R.id.locate_events_btn);
+        FriendsProfile = (Button) rootView.findViewById(R.id.friends_profile_btn);
 
         return rootView;
     }
@@ -116,8 +116,8 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
         clicked depending on their relationship the screen will switch to the appropriate screen.*/
     @Override
     public void onClick(View view) {
-        if (view == LocateFriends) {
-            Intent events = new Intent(getActivity(), LocateFriendsActivity.class);
+        if (view == FriendsProfile) {
+            Intent events = new Intent(getActivity(), FriendsProfileActivity.class);
 
             Button b = (Button) view;
             this.startActivity(events);
@@ -140,4 +140,3 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     }
 
 }
-

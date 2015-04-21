@@ -197,7 +197,7 @@ public class Register extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(Register.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(Register.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

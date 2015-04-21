@@ -1,6 +1,5 @@
 package com.hw1.devlyn.thewateringhole;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -49,10 +48,6 @@ public class EventsActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        /*locate = (Button) this.findViewById(R.id.events_btn);
-
-        locate.setOnClickListener(this);
-*/
         mTitle = mDrawerTitle = getTitle();
 
         // load slide menu items
@@ -125,18 +120,6 @@ public class EventsActivity extends ActionBarActivity  {
             displayView(0);
         }
     }
-
-   /* public void onClick(View v) {
-
-        if (v == locate) {
-            Intent locateEvents = new Intent(this, LocateEvents.class);
-
-            Button b = (Button) v;
-            this.startActivity(locateEvents);
-
-        }
-    }*/
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -217,7 +200,7 @@ public class EventsActivity extends ActionBarActivity  {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(EventsActivity.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(EventsActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

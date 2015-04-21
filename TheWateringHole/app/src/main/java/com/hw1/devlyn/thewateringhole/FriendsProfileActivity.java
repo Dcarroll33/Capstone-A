@@ -196,7 +196,7 @@ public class FriendsProfileActivity extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(FriendsProfileActivity.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(FriendsProfileActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

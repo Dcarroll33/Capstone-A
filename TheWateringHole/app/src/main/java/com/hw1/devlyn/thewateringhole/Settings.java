@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
-import static com.hw1.devlyn.thewateringhole.R.menu.menu_slide_out_menu;
-
 
 public class Settings extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
@@ -189,7 +187,7 @@ public class Settings extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(Settings.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(Settings.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

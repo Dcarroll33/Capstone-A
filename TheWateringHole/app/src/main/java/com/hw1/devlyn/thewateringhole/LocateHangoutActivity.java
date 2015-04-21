@@ -1,6 +1,5 @@
 package com.hw1.devlyn.thewateringhole;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -203,7 +202,7 @@ public class LocateHangoutActivity extends ActionBarActivity implements View.OnC
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(LocateHangoutActivity.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(LocateHangoutActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

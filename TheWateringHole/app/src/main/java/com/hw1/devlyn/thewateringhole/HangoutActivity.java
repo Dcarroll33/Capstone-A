@@ -3,15 +3,16 @@ package com.hw1.devlyn.thewateringhole;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class EditProfileActivity extends ActionBarActivity {
+public class HangoutActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -39,10 +40,12 @@ public class EditProfileActivity extends ActionBarActivity {
     private NavDrawerListAdapter adapter;
 
 
+    Button locateFriends;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_friends);
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -188,7 +191,7 @@ public class EditProfileActivity extends ActionBarActivity {
                 *activity page.
                 */
                 case 0:
-                    Intent home = new Intent(EditProfileActivity.this, MainActivity.class);
+                    Intent home = new Intent(HangoutActivity.this, MainActivity.class);
 
                     startActivity(home);
                     break;
@@ -196,7 +199,7 @@ public class EditProfileActivity extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(EditProfileActivity.this, LocateFriendsActivity.class);
+                    Intent FindPeople = new Intent(HangoutActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;
@@ -204,7 +207,7 @@ public class EditProfileActivity extends ActionBarActivity {
                 *locate event activity page.
                 */
                 case 2:
-                    Intent FindEvents = new Intent(EditProfileActivity.this, LocateEvents.class);
+                    Intent FindEvents = new Intent(HangoutActivity.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
@@ -212,7 +215,7 @@ public class EditProfileActivity extends ActionBarActivity {
                  *locate hangouts activity page.
                  */
                 case 3:
-                    Intent FindHangouts = new Intent(EditProfileActivity.this, LocateHangoutActivity.class);
+                    Intent FindHangouts = new Intent(HangoutActivity.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
@@ -220,7 +223,7 @@ public class EditProfileActivity extends ActionBarActivity {
                 *profile activity page.
                 */
                 case 4:
-                    Intent EditProfile = new Intent(EditProfileActivity.this, EditProfileActivity.class);
+                    Intent EditProfile = new Intent(HangoutActivity.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
@@ -229,7 +232,7 @@ public class EditProfileActivity extends ActionBarActivity {
                  *settings activity page.
                  */
                 case 5:
-                    Intent Settings = new Intent(EditProfileActivity.this, Settings.class);
+                    Intent Settings = new Intent(HangoutActivity.this, Settings.class);
 
                     startActivity(Settings);
                     break;
@@ -268,6 +271,4 @@ public class EditProfileActivity extends ActionBarActivity {
             Log.e("MainActivity", "Error in creating fragment");
         }*/
     }
-
 }
-

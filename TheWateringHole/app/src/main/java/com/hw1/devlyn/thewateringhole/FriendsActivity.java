@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +21,8 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class EditProfileActivity extends ActionBarActivity {
+public class FriendsActivity extends ActionBarActivity  {
+
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -39,10 +41,12 @@ public class EditProfileActivity extends ActionBarActivity {
     private NavDrawerListAdapter adapter;
 
 
+    Button locate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_friends);
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -188,7 +192,7 @@ public class EditProfileActivity extends ActionBarActivity {
                 *activity page.
                 */
                 case 0:
-                    Intent home = new Intent(EditProfileActivity.this, MainActivity.class);
+                    Intent home = new Intent(FriendsActivity.this, MainActivity.class);
 
                     startActivity(home);
                     break;
@@ -196,7 +200,7 @@ public class EditProfileActivity extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(EditProfileActivity.this, LocateFriendsActivity.class);
+                    Intent FindPeople = new Intent(FriendsActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;
@@ -204,7 +208,7 @@ public class EditProfileActivity extends ActionBarActivity {
                 *locate event activity page.
                 */
                 case 2:
-                    Intent FindEvents = new Intent(EditProfileActivity.this, LocateEvents.class);
+                    Intent FindEvents = new Intent(FriendsActivity.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
@@ -212,7 +216,7 @@ public class EditProfileActivity extends ActionBarActivity {
                  *locate hangouts activity page.
                  */
                 case 3:
-                    Intent FindHangouts = new Intent(EditProfileActivity.this, LocateHangoutActivity.class);
+                    Intent FindHangouts = new Intent(FriendsActivity.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
@@ -220,16 +224,15 @@ public class EditProfileActivity extends ActionBarActivity {
                 *profile activity page.
                 */
                 case 4:
-                    Intent EditProfile = new Intent(EditProfileActivity.this, EditProfileActivity.class);
+                    Intent EditProfile = new Intent(FriendsActivity.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
-
                 /*Case 5 used for the Settings item in the list and redirects the user to the
                  *settings activity page.
                  */
                 case 5:
-                    Intent Settings = new Intent(EditProfileActivity.this, Settings.class);
+                    Intent Settings = new Intent(FriendsActivity.this, Settings.class);
 
                     startActivity(Settings);
                     break;
@@ -270,4 +273,3 @@ public class EditProfileActivity extends ActionBarActivity {
     }
 
 }
-

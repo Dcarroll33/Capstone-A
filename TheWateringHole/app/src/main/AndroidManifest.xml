@@ -45,6 +45,10 @@
             android:label="@string/Events" >
         </activity>
         <activity
+            android:name=".FriendsActivity"
+            android:label="@string/Friends" >
+        </activity>
+        <activity
             android:name=".LocateEvents"
             android:label="@string/title_activity_locate_events" >
         </activity>
@@ -53,15 +57,7 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name=".Hangouts"
-            android:label="@string/title_activity_hangouts" >
-        </activity>
-        <activity
-            android:name=".Friends"
-            android:label="@string/title_activity_friends" >
-        </activity>
-        <activity
-            android:name=".Locate_Friends"
+            android:name=".LocateFriendsActivity"
             android:label="@string/Locate__Friends" >
         </activity>
 

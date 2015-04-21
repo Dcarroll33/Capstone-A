@@ -1,17 +1,12 @@
 package com.hw1.devlyn.thewateringhole;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -244,7 +239,7 @@ public class MainActivity extends ActionBarActivity {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(MainActivity.this, Locate_Friends.class);
+                    Intent FindPeople = new Intent(MainActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;

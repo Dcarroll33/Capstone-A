@@ -19,7 +19,7 @@ import android.widget.Button;
  * Use the {@link FragmentMainActivity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentEvents extends Fragment implements  View.OnClickListener {
+public class FragmentFriends extends Fragment implements  View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -42,8 +42,8 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
      * @param param2 Parameter 2.
      * @return A new instance of fragment FragmentEvents.
      */
-    public static FragmentEvents newInstance(String param1, String param2) {
-        FragmentEvents fragment = new FragmentEvents();
+    public static FragmentFriends newInstance(String param1, String param2) {
+        FragmentFriends fragment = new FragmentFriends();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -51,7 +51,7 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
         return fragment;
     }
 
-    public FragmentEvents() {
+    public FragmentFriends() {
         // Required empty public constructor
     }
 
@@ -68,11 +68,11 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_friends, container, false);
 
         getButtons(rootView);
 
-        LocateFriends = (Button) rootView.findViewById(R.id.locate_events_btn);
+        LocateFriends = (Button) rootView.findViewById(R.id.locate_friends_btn);
 
         return rootView;
     }
@@ -140,4 +140,3 @@ public class FragmentEvents extends Fragment implements  View.OnClickListener {
     }
 
 }
-
