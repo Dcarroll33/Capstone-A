@@ -22,7 +22,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class EventsActivity extends ActionBarActivity implements View.OnClickListener {
+public class EventsActivity extends ActionBarActivity  {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -49,10 +49,10 @@ public class EventsActivity extends ActionBarActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        locate = (Button) this.findViewById(R.id.events_btn);
+        /*locate = (Button) this.findViewById(R.id.events_btn);
 
         locate.setOnClickListener(this);
-
+*/
         mTitle = mDrawerTitle = getTitle();
 
         // load slide menu items
@@ -126,7 +126,7 @@ public class EventsActivity extends ActionBarActivity implements View.OnClickLis
         }
     }
 
-    public void onClick(View v) {
+   /* public void onClick(View v) {
 
         if (v == locate) {
             Intent locateEvents = new Intent(this, LocateEvents.class);
@@ -135,7 +135,7 @@ public class EventsActivity extends ActionBarActivity implements View.OnClickLis
             this.startActivity(locateEvents);
 
         }
-    }
+    }*/
 
 
     @Override
