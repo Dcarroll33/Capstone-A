@@ -272,7 +272,7 @@ public class MainActivity extends ActionBarActivity {
                  *settings activity page.
                  */
                 case 5:
-                    Intent Settings = new Intent(MainActivity.this, Settings.class);
+                    Intent Settings = new Intent(MainActivity.this, SettingsActivity.class);
 
                     startActivity(Settings);
                     break;
@@ -286,34 +286,11 @@ public class MainActivity extends ActionBarActivity {
      * Diplaying fragment view for selected nav drawer list item
      */
     private void displayView(int position) {
-        // update the main content by replacing fragments
-       /* Fragment fragment = null;*/
-       /* switch (position) {
-            case 0:
-                Intent events = new Intent(this, MainActivity.class);
-
-               /* Button b = (Button) v;
-                this.startActivity(events);
-                break;
-
-            default:
-
-        }
-
-        /*if (fragment != null) {
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(id.frame_container, fragment).commit();
-            */
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
         mDrawerList.setSelection(position);
         setTitle(navMenuTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
-    /*} else {
-            // error in creating fragment
-            Log.e("MainActivity", "Error in creating fragment");
-        }*/
     }
 
 

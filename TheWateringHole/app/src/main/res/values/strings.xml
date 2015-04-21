@@ -99,12 +99,12 @@
     <!-- Nav Drawer List Item Icons -->
     <!-- Item names in order as the titles are in for the navigational menu-->
     <array name="nav_drawer_icons">
-        <item>@drawable/cherry_blossum</item>
-        <item>@drawable/cherry_blossum</item>
-        <item>@drawable/cherry_blossum</item>
-        <item>@drawable/cherry_blossum</item>
-        <item>@drawable/cherry_blossum</item>
-        <item>@drawable/cherry_blossum</item>
+        <item>@drawable/home_icn</item>
+        <item>@drawable/friends_icon</item>
+        <item>@drawable/events_icn</item>
+        <item>@drawable/group_icn</item>
+        <item>@drawable/profile_icn</item>
+        <item>@drawable/settings_icn</item>
     </array>
 
     <!-- Content Description -->

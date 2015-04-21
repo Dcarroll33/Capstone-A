@@ -21,7 +21,7 @@ import info.info.wateringhole.slidingmenu.adapter.NavDrawerListAdapter;
 import info.info.wateringhole.slidingmenu.model.NavDrawerItem;
 
 
-public class EventsActivity extends ActionBarActivity  {
+public class LocateEventsActivity extends ActionBarActivity  {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -46,7 +46,7 @@ public class EventsActivity extends ActionBarActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_locate_events);
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -192,7 +192,7 @@ public class EventsActivity extends ActionBarActivity  {
                 *activity page.
                 */
                 case 0:
-                    Intent home = new Intent(EventsActivity.this, MainActivity.class);
+                    Intent home = new Intent(LocateEventsActivity.this, MainActivity.class);
 
                     startActivity(home);
                     break;
@@ -200,7 +200,7 @@ public class EventsActivity extends ActionBarActivity  {
                  *locate friends activity page.
                  */
                 case 1:
-                    Intent FindPeople = new Intent(EventsActivity.this, LocateFriendsActivity.class);
+                    Intent FindPeople = new Intent(LocateEventsActivity.this, LocateFriendsActivity.class);
 
                     startActivity(FindPeople);
                     break;
@@ -208,7 +208,7 @@ public class EventsActivity extends ActionBarActivity  {
                 *locate event activity page.
                 */
                 case 2:
-                    Intent FindEvents = new Intent(EventsActivity.this, LocateEvents.class);
+                    Intent FindEvents = new Intent(LocateEventsActivity.this, LocateEvents.class);
 
                     startActivity(FindEvents);
                     break;
@@ -216,7 +216,7 @@ public class EventsActivity extends ActionBarActivity  {
                  *locate hangouts activity page.
                  */
                 case 3:
-                    Intent FindHangouts = new Intent(EventsActivity.this, LocateHangoutActivity.class);
+                    Intent FindHangouts = new Intent(LocateEventsActivity.this, LocateHangoutActivity.class);
 
                     startActivity(FindHangouts);
                     break;
@@ -224,7 +224,7 @@ public class EventsActivity extends ActionBarActivity  {
                 *profile activity page.
                 */
                 case 4:
-                    Intent EditProfile = new Intent(EventsActivity.this, EditProfileActivity.class);
+                    Intent EditProfile = new Intent(LocateEventsActivity.this, EditProfileActivity.class);
 
                     startActivity(EditProfile);
                     break;
@@ -232,7 +232,7 @@ public class EventsActivity extends ActionBarActivity  {
                  *settings activity page.
                  */
                 case 5:
-                    Intent Settings = new Intent(EventsActivity.this, SettingsActivity.class);
+                    Intent Settings = new Intent(LocateEventsActivity.this, SettingsActivity.class);
 
                     startActivity(Settings);
                     break;
@@ -253,4 +253,3 @@ public class EventsActivity extends ActionBarActivity  {
     }
 
 }
-
