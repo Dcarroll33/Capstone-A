@@ -9,6 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 /**
@@ -32,7 +40,12 @@ public class FragmentUserProfile extends Fragment implements  View.OnClickListen
     private boolean mIntentInProgress;
 
     /*Fields for the buttons to be used in this class.*/
-    Button LocateFriends;
+    Button save;
+    Button load;
+    StringBuilder str;
+    String filename = "UserProfile.txt";
+    EditText username;
+    EditText paintPad;
 
     /**
      * Use this factory method to create a new instance of
@@ -68,11 +81,27 @@ public class FragmentUserProfile extends Fragment implements  View.OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
         getButtons(rootView);
 
-        LocateFriends = (Button) rootView.findViewById(R.id.locate_events_btn);
+        final Button save = (Button) rootView.findViewById(R.id.save_btn);
+        final Button load = (Button) rootView.findViewById(R.id.load_btn);
+
+        username = (EditText) rootView.findViewById(R.id.editText);
+
+        load.setOnClickListener(this);
+
+        save.setOnClickListener (new View.OnClickListener() {
+            public void onClick(View v) {
+                /*Intent myIntent = new Intent(getActivity(), Save.class);
+                startActivity(myIntent);    // change to startActivity*/
+               if (v == save) {
+                   save(filename);
+               }
+            }
+        });
+        str = new StringBuilder();
 
         return rootView;
     }
@@ -115,16 +144,90 @@ public class FragmentUserProfile extends Fragment implements  View.OnClickListen
         in this case the Events, Friends, Profile or Settings buttons. Once one button has been
         clicked depending on their relationship the screen will switch to the appropriate screen.*/
     @Override
-    public void onClick(View view) {
-        if (view == LocateFriends) {
-            Intent events = new Intent(getActivity(), LocateFriendsActivity.class);
+    public void onClick(View v) {
+        if (v == save) {
+            // When clicked, show a toast with the TextView text
+            Toast.makeText(this.getActivity().getApplicationContext(), ((Button) v).getText(),
+                    Toast.LENGTH_SHORT).show();
 
-            Button b = (Button) view;
-            this.startActivity(events);
+            //Append the text to the string builder
+            str.append(((Button) v).getText());
+
+            //Display the result.
+            username.setText(str.toString());
+
+            save(filename);
+        } else if (v == load){
+                Toast.makeText(this.getActivity().getApplicationContext(), ((Button) v).getText(),
+                        Toast.LENGTH_SHORT).show();
+
+                //Append the text to the string builder
+                str.append(((Button) v).getText());
+
+                //Display the result.
+            /*results.setText(str.toString());*/
+                load(filename);
         }
     }
 
 
+    public void save(String filename)
+    {
+        File file = new File(getActivity().getFilesDir(), filename);
+
+        String string = "";
+
+        if(username != null) string = username.getText().toString();
+
+        FileOutputStream outputStream;
+
+        try{
+            outputStream  = getActivity().openFileOutput(
+                    filename, getActivity().MODE_PRIVATE);
+            /*outputStream  = ctx.openFileOutput(filename, Context.MODE_PRIVATE);*/
+            outputStream.write(string.getBytes());
+            outputStream.close();
+
+            Toast.makeText(getActivity(), "Saved", Toast.LENGTH_LONG).show();
+        }
+        catch (FileNotFoundException e) {
+            Toast.makeText(getActivity(), "Error File Not Found", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            Toast.makeText(getActivity(), "Error IOException", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+        /*catch (Exception e) {
+            Toast.makeText(getActivity(), "Error Exception", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }*/
+    }
+
+    public void load(String filename) {
+        int ch;
+        StringBuffer fileContent = new StringBuffer("");
+        FileInputStream fis;
+
+       /* File file = new File(getActivity().getFilesDir(), filename);*/
+
+        try {
+            fis = getActivity().openFileInput(filename);
+            try {
+                while ((ch = fis.read()) != -1)
+                    fileContent.append((char) ch);
+            } catch (IOException e) {
+                Toast.makeText(getActivity(), "Error loading file", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            Toast.makeText(getActivity(), "There was no data to load", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+        String data = new String(fileContent);
+
+        username.setText(data);
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

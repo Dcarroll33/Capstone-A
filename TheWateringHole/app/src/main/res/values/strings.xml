@@ -65,6 +65,8 @@
 <string name="title_activity_splash">Splash Screen</string>
 <string name="Confirm">Confirm</string>
 <string name="Friends">Friends</string>
+<string name="Save">Save</string>
+<string name="Load">Load</string>
 
 <!--Activity Screen Titles-->
 <string name="hangout_setup_title">Hangout Setup</string>
