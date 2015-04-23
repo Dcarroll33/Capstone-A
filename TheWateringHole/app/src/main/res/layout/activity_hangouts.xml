@@ -8,13 +8,12 @@
     tools:context="com.hw1.devlyn.thewateringhole.HangoutsActivity"
     android:background="#ffbd32ff">
 
+
     <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!-- Framelayout to display Fragments -->
 
         <!-- Listview to display slider menu -->
         <ListView
@@ -44,9 +43,6 @@
             android:id="@+id/fragment_main_activity"
             android:layout_gravity="center" />
     </FrameLayout>
-
-
-
 
 </RelativeLayout>
 

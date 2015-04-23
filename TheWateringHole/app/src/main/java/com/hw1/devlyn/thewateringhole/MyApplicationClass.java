@@ -30,50 +30,47 @@ public class MyApplicationClass extends Application {
     }
 
     public static class MySQLAccess {
-        private Connection connect = null;
-        private Statement statement = null;
-        private PreparedStatement preparedStatement = null;
-        private ResultSet resultSet = null;
-        private String dbCon = "jdbc:mysql://sql4.freesqldatabase.com:3306/sql474837";
-        private String usrName = "sql474837";
-        private String usrPswd = "zY3*gS1!";
+        private static Connection connect = null;
+        private static Statement statement = null;
+        private static PreparedStatement preparedStatement = null;
+        private static ResultSet resultSet = null;
+        private static final String DBCON = "jdbc:mysql://sql4.freesqldatabase.com:3306/sql474837";
+        private static final String USERNAME = "sql474837";
+        private static final String USERPSWD = "zY3*gS1!";
 
+        public static void registerUser(String userName, String userPswd, String email) { // PreparedStatements can use variables and are more efficient
+            try {
+                preparedStatement = connect
+                        .prepareStatement("insert into sql474837.Users (userName, password, email) values (?,?,?)");
+                //
+                preparedStatement.setString(1, userName);
+                preparedStatement.setString(2, userPswd);
+                preparedStatement.setString(3, email);
+                preparedStatement.executeUpdate();
+                Log.d("SQLConnect", "added to DB");
+            } catch (SQLException e) {
+                Log.e("MYMYSQLACCESS", e.getMessage());
+            }
+        }
 
-
-        public void readDataBase() throws Exception {
+        public static void readDataBase() throws Exception {
             try {
                 // This will load the MySQL driver, each DB has its own driver
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 // Setup the connection with the DB
                 Log.d("Before Connect","Register");
                 connect = DriverManager
-                        .getConnection(dbCon, usrName, usrPswd);
+                        .getConnection(DBCON, USERNAME, USERPSWD);
                 Log.d("Connected","Register");
-
-                // PreparedStatements can use variables and are more efficient
-                preparedStatement = connect
-                        .prepareStatement("insert into sql474837.Users (`userName`, `password`, `email`) values (?,?,?)");
-                                /*feedback.comments values (default, ?, ?, ?, ? , ?, ?)");*/
-                // "myuser, webpage, datum, summery, COMMENTS from feedback.comments");
-                // Parameters start with 1
-                preparedStatement.setString(1, "Dev");
-                preparedStatement.setString(2, "BoB");
-                preparedStatement.setString(3, "dev@gmail.com");
-                preparedStatement.executeUpdate();
-                Log.d("SQLConnect","added to DB");
-
-
             } catch (Exception e) {
                 e.getStackTrace();
                 throw e;
-            } finally {
-                close();
             }
 
         }
 
         // You need to close the resultSet
-        private void close() {
+        private static void close() {
             try {
                 if (resultSet != null) {
                     resultSet.close();

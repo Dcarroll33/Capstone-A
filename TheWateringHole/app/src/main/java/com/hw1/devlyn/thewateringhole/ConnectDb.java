@@ -16,12 +16,17 @@ import javax.xml.parsers.SAXParserFactory;
 public class ConnectDb extends AsyncTask<String, Void, String> {
 
     private Exception exception;
-    private MyApplicationClass.MySQLAccess dao = new MyApplicationClass.MySQLAccess();
 
-    protected String doInBackground(String... urls) {
+    public static MyApplicationClass.MySQLAccess dao = new MyApplicationClass.MySQLAccess();
+
+    public static MyApplicationClass.MySQLAccess getDao() {
+        return dao;
+    }
+
+    protected String doInBackground(String... strings) {
         try {
-            dao.readDataBase();
-        } catch (Exception e) {
+           dao.readDataBase();
+ } catch (Exception e) {
             this.exception = e;
         }
         return null;

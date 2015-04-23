@@ -101,12 +101,14 @@ public class RegisterActivity extends ActionBarActivity  {
         {
 
             public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
                 getSupportActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
                 invalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
                 getSupportActionBar().setTitle(mDrawerTitle);
                 // calling onPrepareOptionsMenu() to hide action bar icons
                 invalidateOptionsMenu();
@@ -114,7 +116,6 @@ public class RegisterActivity extends ActionBarActivity  {
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        new ConnectDb().execute("");
 
 
         if (savedInstanceState == null) {

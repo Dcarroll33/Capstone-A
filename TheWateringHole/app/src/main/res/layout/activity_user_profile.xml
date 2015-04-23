@@ -7,6 +7,7 @@
     tools:context="com.hw1.devlyn.thewateringhole.UserProfile"
     android:background="#ffbd32ff">
 
+
     <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/drawer_layout"
@@ -25,7 +26,6 @@
             android:listSelector="@drawable/list_selector"
             android:background="@color/list_background"/>
     </android.support.v4.widget.DrawerLayout>
-
     <!-- Framelayout to display Fragments including the buttons for the activity screen! -->
     <FrameLayout
         android:id="@+id/frame_container"

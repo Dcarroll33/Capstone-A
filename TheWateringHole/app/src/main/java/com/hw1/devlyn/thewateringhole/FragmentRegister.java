@@ -3,12 +3,18 @@ package com.hw1.devlyn.thewateringhole;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import static com.hw1.devlyn.thewateringhole.ConnectDb.*;
 
 
 /**
@@ -33,6 +39,16 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
 
     /*Fields for the buttons to be used in this class.*/
     Button Register;
+    EditText userName;
+    EditText newPassword;
+    EditText repeatPassword;
+    EditText email;
+
+    String userNameText;
+    String newPasswordText;
+    String repeatPasswordText;
+    String emailText;
+    private static AsyncTask<String, Void, String> dbCon;
 
     /**
      * Use this factory method to create a new instance of
@@ -62,6 +78,7 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        dbCon = new ConnectDb().execute();
     }
 
     @Override
@@ -73,6 +90,11 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
         getButtons(rootView);
 
         Register = (Button) rootView.findViewById(R.id.register_button);
+        userName = (EditText) rootView.findViewById(R.id.Username);
+        newPassword = (EditText) rootView.findViewById(R.id.NewPassword);
+        repeatPassword = (EditText) rootView.findViewById(R.id.RepeatPassword);
+        email = (EditText) rootView.findViewById(R.id.Email);
+
 
         return rootView;
     }
@@ -117,10 +139,23 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
     @Override
     public void onClick(View view) {
         if (view == Register) {
-            Intent events = new Intent(getActivity(), LocateFriendsActivity.class);
+            userNameText = userName.getText().toString();
+            newPasswordText = newPassword.getText().toString();
+            repeatPasswordText = repeatPassword.getText().toString();
+            emailText = email.getText().toString();
 
-            Button b = (Button) view;
-            this.startActivity(events);
+            if (newPasswordText.equals(repeatPasswordText)){
+              MyApplicationClass.MySQLAccess dao = new MyApplicationClass.MySQLAccess();
+
+              dao.registerUser(userNameText, newPasswordText, emailText);
+              Log.d("REGISTRATION", "Sent: " + userNameText + ", " + newPasswordText + ", " + emailText);
+              Toast.makeText(getActivity(),"Reg successful!", Toast.LENGTH_SHORT).show();
+              Intent goToMain = new Intent(getActivity(),Login_Screen.class);
+              startActivity(goToMain);
+
+          } else {
+                Toast.makeText(getActivity(), "Passwords don't match!",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

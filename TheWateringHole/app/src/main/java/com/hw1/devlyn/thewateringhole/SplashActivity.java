@@ -1,12 +1,17 @@
 package com.hw1.devlyn.thewateringhole;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.google.android.gms.auth.GoogleAuthUtil;
 
 
 public class SplashActivity extends Activity {
@@ -19,6 +24,7 @@ public class SplashActivity extends Activity {
     /*Assigns the nextActivity as the login screen*/
     Class nextActivity = Login_Screen.class;
 
+    private AccountManager mAccountManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +37,8 @@ public class SplashActivity extends Activity {
         handler.postDelayed(r,DELAY);
     }
 
+
+
     Runnable r = new Runnable(){
       public void run() {
           gotoNextScreen();
@@ -40,6 +48,8 @@ public class SplashActivity extends Activity {
     /*Method to fire the next activity after the splash screen displays.*/
     public void gotoNextScreen() {
         Intent nextScreen = new Intent(this, nextActivity);
+        Bundle bundle = new Bundle();
+
         this.startActivity(nextScreen);
     }
 }
