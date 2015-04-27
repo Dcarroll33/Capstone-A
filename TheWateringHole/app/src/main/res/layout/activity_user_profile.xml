@@ -14,6 +14,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Framelayout to display Fragments including the buttons for the activity screen! -->
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" >
+
+            <fragment
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:name="com.hw1.devlyn.thewateringhole.FragmentUserProfile"
+                android:id="@+id/fragment_main_activity"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
         <!-- Listview to display slider menu -->
         <ListView
             android:id="@+id/list_slider_menu"
@@ -26,21 +43,6 @@
             android:listSelector="@drawable/list_selector"
             android:background="@color/list_background"/>
     </android.support.v4.widget.DrawerLayout>
-    <!-- Framelayout to display Fragments including the buttons for the activity screen! -->
-    <FrameLayout
-        android:id="@+id/frame_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" >
 
-        <fragment
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:name="com.hw1.devlyn.thewateringhole.FragmentUserProfile"
-            android:id="@+id/fragment_main_activity"
-            android:layout_gravity="center" />
-    </FrameLayout>
 
 </RelativeLayout>

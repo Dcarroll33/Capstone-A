@@ -46,6 +46,8 @@ public class MainActivity extends ActionBarActivity {
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,10 +169,13 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         // toggle nav drawer on selecting action bar app icon/title
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
+
+        /*
         // Handle action bar actions click
         switch (item.getItemId()) {
             case id.action_settings:
@@ -178,6 +183,9 @@ public class MainActivity extends ActionBarActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+        */;
+
+        return super.onOptionsItemSelected(item);
     }
 
     /**
