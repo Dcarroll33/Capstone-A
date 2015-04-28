@@ -11,7 +11,7 @@
 
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:background="@drawable/login_button"
+            android:background="@drawable/button"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -27,7 +27,7 @@
 
         android:layout_width="125dp"
         android:layout_height="50dp"
-        android:background="@drawable/login_button"
+        android:background="@drawable/button"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
@@ -44,7 +44,7 @@
 
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:background="@drawable/login_button"
+            android:background="@drawable/button"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -61,7 +61,7 @@
 
             android:layout_width="125dp"
             android:layout_height="50dp"
-            android:background="@drawable/login_button"
+            android:background="@drawable/button"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -78,7 +78,7 @@
 
         android:layout_width="125dp"
         android:layout_height="50dp"
-        android:background="@drawable/login_button"
+        android:background="@drawable/button"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"

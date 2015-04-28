@@ -61,7 +61,7 @@
          android:layout_height="wrap_content"
          android:text="@string/register"
          android:id="@+id/register_button"
-         android:background="@drawable/login_button"
+         android:background="@drawable/button"
          android:layout_below="@+id/Email"
          android:layout_alignLeft="@+id/textView2"
          android:layout_alignStart="@+id/textView2"
