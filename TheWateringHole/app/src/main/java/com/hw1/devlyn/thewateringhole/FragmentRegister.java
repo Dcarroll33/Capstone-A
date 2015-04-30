@@ -14,19 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static com.hw1.devlyn.thewateringhole.ConnectDb.*;
+import java.util.concurrent.ExecutionException;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FragmentMainActivity.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FragmentMainActivity#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class FragmentRegister extends Fragment implements  View.OnClickListener {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // the fragment initialization parameters
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -78,7 +70,6 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        dbCon = new ConnectDb().execute();
     }
 
     @Override
@@ -145,17 +136,31 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
             emailText = email.getText().toString();
 
             if (newPasswordText.equals(repeatPasswordText)){
-              MyApplicationClass.MySQLAccess dao = new MyApplicationClass.MySQLAccess();
 
-              dao.registerUser(userNameText, newPasswordText, emailText);
-              Log.d("REGISTRATION", "Sent: " + userNameText + ", " + newPasswordText + ", " + emailText);
-              Toast.makeText(getActivity(),"Reg successful!", Toast.LENGTH_SHORT).show();
-              Intent goToMain = new Intent(getActivity(),Login_Screen.class);
-              startActivity(goToMain);
+                ConnectDb conDb = new ConnectDb();
+                try {
+                    String[] params = {"register", userNameText, newPasswordText, emailText};
+                     conDb.execute(params).get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                 int result = conDb.getResult();
+             if(result > -1) {
+                 Log.d("REGISTRATION", "Sent: " + userNameText + ", " + newPasswordText + ", " + emailText);
+                 Toast.makeText(getActivity(), "Registration Successful!", Toast.LENGTH_SHORT).show();
+                 Intent goToMain = new Intent(getActivity(), Login_Screen.class);
+                 startActivity(goToMain);
+             }else if(result == -2){
+                 Toast.makeText(getActivity(), "User Already Exists", Toast.LENGTH_SHORT).show();
+             }else if(result == -1){
+                 Toast.makeText(getActivity(), "Registration Failed", Toast.LENGTH_SHORT).show();
+             }
 
           } else {
                 Toast.makeText(getActivity(), "Passwords don't match!",Toast.LENGTH_SHORT).show();
-            }
+          }
         }
     }
 
@@ -165,10 +170,6 @@ public class FragmentRegister extends Fragment implements  View.OnClickListener 
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
         public void onFragmentInteraction(Uri uri);

@@ -44,7 +44,6 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
     Button Settings;
     Button SignOut;
 
-    GoogleApiClient mGoogleApiClient = MyApplicationClass.getClient();
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -132,9 +131,9 @@ public class FragmentMainActivity extends Fragment implements  View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.sign_out_button) {
-            mGoogleApiClient.disconnect();
-            Toast.makeText(super.getActivity().getBaseContext(), "Connected: "+ mGoogleApiClient.isConnected()+"", Toast.LENGTH_LONG).show();
-            Intent main = new Intent(getActivity(), MainActivity.class);
+            /*mGoogleApiClient.disconnect();*/
+            /*Toast.makeText(super.getActivity().getBaseContext(), "Connected: " /* mGoogleApiClient.isConnected()+"", Toast.LENGTH_LONG).show();*/
+            Intent main = new Intent(getActivity(), Login_Screen.class);
             this.startActivity(main);
         }
         if (view == Events) {

@@ -6,11 +6,11 @@ android:layout_height="wrap_content" >
         <corners android:radius="14dp" />
 
         <gradient
-            android:angle="45"
-            android:centerX="35%"
-            android:centerColor="#A8972A"
-            android:startColor="#E8C53A"
-            android:endColor="#A70FFF"
+            android:angle="90"
+            android:centerX="50%"
+            android:centerColor="#AEBCC2"
+            android:startColor="#A8972A"
+            android:endColor="#A8972A"
             android:type="linear" />
         <padding
             android:left="0dp"

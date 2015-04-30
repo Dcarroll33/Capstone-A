@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <color name="counter_text_bg">#AC3649</color>
-        <color name="list_background">#F747DF</color>
-        <color name="list_background_pressed">#44E2EA</color>
+        <color name="counter_text_bg">#DDE89B</color>
+        <color name="list_background">#DDE89B</color>
+        <color name="list_background_pressed">#BB3AB3</color>
 </resources>
